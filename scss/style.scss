@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    max-width: 1600px;
+    justify-content: center;
+    margin: 2em auto;
+    flex-direction: column;
+
+    #table {
+        width: 100%;
+        box-shadow: 0 0 8px #cccccc;
+        border-radius: 5px;
+
+        thead {
+            tr {
+                border-bottom: 1px solid #cccccc50;
+            }
+        }
+
+        tr {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            padding: 1em 0;
+            text-align: center;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid #cccccc50;
+            }
+
+            td {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                span {
+                    padding: .5em 1.5em;
+                    font-size: 13px;
+                    color: #fff;
+                    max-width: 120px;
+                    border-radius: 6px;
+                    width: 100%;
+
+                    &.success {
+                        background-color: #5be881;
+                    }
+
+                    &.danger {
+                        background-color: #f00;
+                    }
+
+                    &.warning {
+                        background-color: #fdb64d;
+                    }
+                }
+
+                button {
+                    mask: url(../assets/trash.png) center / contain no-repeat;
+                    width: 20px;
+                    height: 30px;
+                    background-color: #333;
+                    cursor: pointer;
+                    transition: .4s;
+
+                    &:hover {
+                        background-color: red;
+                    }
+                }
+            }
+        }
+    }
+
+    #modalContainer {
+        position: absolute;
+        inset: 0;
+        justify-content: center;
+        align-items: center;
+        background-color: #33333350;
+        display: none;
+
+        &.show {
+            display: flex;
+        }
+
+        #modalcloser {
+            position: absolute;
+            z-index: 2;
+            inset: 0;
+        }
+
+        #modal {
+            z-index: 3;
+            position: relative;
+            padding: 2em;
+            background-color: #fff;
+            box-shadow: 0 0 20px 8px #33333347;
+            border-radius: 5px;
+
+            h1 {
+                margin-bottom: 1em;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                row-gap: 4em;
+
+                .formwrapper {
+
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    grid-gap: 3em 6em;
+
+
+                    .formelement {
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+
+                        label {
+                            margin-bottom: .5em;
+                            color: #333333ad;
+                            transition: .4s;
+                            z-index: 4;
+                        }
+
+                        input,
+                        select {
+                            border-radius: 3px;
+                            border: 1px solid #ccc;
+                            font-size: 15px;
+                            padding: .5em;
+                            background: transparent;
+                            position: relative;
+                            z-index: 5;
+                            width: 400px;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+    #addSection {
+        padding: 1em;
+        box-shadow: 0 0 8px #cccccc;
+        border-radius: 5px;
+        margin: 1em 0;
+        display: flex;
+    }
+
+    button {
+        margin-left: auto;
+        padding: .5em 2em;
+        cursor: pointer;
+        max-width: max-content;
+        background-color: #fdb64d;
+        color: #333;
+        border-radius: 5px;
+        border-color: transparent;
+        font-size: 17px;
+        box-shadow: 0 0 10px #ccc;
+    }
+}

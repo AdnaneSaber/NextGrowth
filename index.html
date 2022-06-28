@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Users</title>
+</head>
+
+<body>
+    <div class="container">
+        <table id="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Date de création</th>
+                    <th>État</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Nom d'utilisateur</th>
+                    <th>Matricule</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <div id="addSection">
+            <button onclick="toggleModal()">Ajouter un utilisateur</button>
+        </div>
+        <div id="modalContainer">
+            <div id="modalcloser"></div>
+            <div id="modal">
+                <h1>Ajout d'utilisateurs</h1>
+                <form method="post" id="addForm">
+                    <div class="formwrapper">
+                        <div class="formelement">
+                            <label for="">Nom</label>
+                            <input type="text" name="lastName" id="lastName">
+                        </div>
+                        <div class="formelement">
+                            <label for="">Prénom</label>
+                            <input type="text" name="firstName" id="firstName">
+                        </div>
+                        <div class="formelement">
+                            <label for="">État</label>
+                            <select name="status" id="status">
+                                <option selected value="En validation">En validation</option>
+                                <option value="Validé">Validé</option>
+                                <option value="Rejeté">Rejeté</option>
+                            </select>
+                        </div>
+                        <div class="formelement">
+                            <label for="">Nom d'utilisateur</label>
+                            <input type="text" name="userName" id="userName">
+                        </div>
+                        <div class="formelement">
+                            <label for="">Date de création</label>
+                            <input type="text" name="createdDate" id="createdDate">
+                        </div>
+                        <div class="formelement">
+                            <label for="">Matricule</label>
+                            <input type="text" name="registrationNumber" id="registrationNumber">
+                        </div>
+                    </div>
+                    <button type="submit">Enregistrer</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
